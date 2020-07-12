@@ -5,13 +5,9 @@ int missingNumber(int nums[], int numsSize)
 {
     int i=0;
     for(i=0;i<numsSize;i++)
-    {
         if(nums[i]!=i)
-        {
-            return i;
             break;
-        }
-    }
+    return i;
 }
 
 int main()
