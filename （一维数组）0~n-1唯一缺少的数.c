@@ -1,3 +1,5 @@
+/*问题：函数中return的位置规范*/
+/*当字符与下标不同时，输出下标，即缺失数字*/
 #include "stdio.h"
 #define Max 10000
 
