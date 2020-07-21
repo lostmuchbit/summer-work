@@ -6,20 +6,17 @@ void flipAndInvertImage(int** A, int ASize, int* AColSize)
 {
     int col=ASize;
     int row=*AColSize;
-
-    for(int j=0;j<row;j++)
-    {
-        if(A[0][j]==0) A[0][j]=1;
-        else A[0][j]=0;
-    }
+    int ret[col][row];
 
     for(int i=0;i<col;i++)
     for(int j=0;j<row;j++)
-    {
-        if(A[i][j]==0) A[i][j]=1;
-        else A[i][j]=0;
-    }
+     ret[i][j] = A[i][row-1-j] == 0 ? 1 : 0;
+
+    for(int i=0;i<col;i++)
+    for(int j=0;j<row;j++)
+    A[i][j]=ret[i][j];
 }
+
 
 int main()
 {
