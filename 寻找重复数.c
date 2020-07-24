@@ -23,18 +23,16 @@ int findDuplicate(int* nums, int numsSize){
 
 int main()
 {
-	int *nums,numsSize=0,target;
+	int *nums;
+	int numsSize;
+	scanf("%d",&numsSize);
 	
-	nums=(int*)malloc(sizeof(int));
+	nums=(int*)malloc(sizeof(int)*numsSize);
 	
-	scanf("%d",nums+numsSize);
-    while(getchar()!='\n')
-    {
-    	numsSize++;
-    	scanf("%d",nums+numsSize);
-	}
+	for(int i=0;i<numsSize;i++)
+	scanf("%d",&nums[i]);
 	
-	printf("%d",findDuplicate(nums,numsSize+1));
+	printf("%d",findDuplicate(nums,numsSize));
 	
 	free(nums);
 	return 0;
