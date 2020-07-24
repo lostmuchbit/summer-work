@@ -19,20 +19,18 @@ int searchInsert(int* nums, int numsSize, int target)
 
 int main()
 {
-	int *nums,numsSize=0,target;
+	int *nums,target;
+	int numsSize;
+	scanf("%d",&numsSize);
+	nums=(int*)malloc(sizeof(int)*numsSize);
 	
-	nums=(int*)malloc(sizeof(int));
-	
-	scanf("%d",nums+numsSize);
-    while(getchar()!='\n')
-    {
-    	numsSize++;
-    	scanf("%d",nums+numsSize);
-	}
+    for(int i=0;i<numsSize;i++)
+	scanf("%d",&nums[i]);
 	
 	scanf("%d",&target);
 	
-	printf("%d",searchInsert(nums,numsSize+1,target));
+	printf("%d",searchInsert(nums,numsSize,target));
 	
+	free(nums);
 	return 0;
 }
