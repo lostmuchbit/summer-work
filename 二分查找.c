@@ -24,21 +24,19 @@ int search(int* nums, int numsSize, int target)
 
 int main()
 {
-	int *nums,numsSize=0,target;
+	int *nums,target;
+	int numsSize;
+	scanf("%d",&numsSize);
 	
-	nums=(int*)malloc(sizeof(int));
+	nums=(int*)malloc(sizeof(int)*numsSize);
 	
-	scanf("%d",nums+numsSize);
-    while(getchar()!='\n')
-    {
-    	numsSize++;
-    	scanf("%d",nums+numsSize);
-	}
+	for(int i=0;i<numsSize;i++)
+	scanf("%d",&nums[i]);
 	
 	scanf("%d",&target);
 	
-	printf("%d",search(nums,numsSize+1,target));
+    printf("%d",search( nums,numsSize,target));
 	
 	free(nums);
 	return 0;
-} 
+}
