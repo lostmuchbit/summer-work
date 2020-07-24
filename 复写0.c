@@ -14,25 +14,21 @@ void duplicateZeros(int* arr, int arrSize)
         }
 
 }
-
 int main()
 {
-	int *arr,arrSize=0;
+	int *nums;
+	int numsSize;
+	scanf("%d",&numsSize);
 	
-	arr=(int *)malloc(sizeof(int));
+	nums=(int*)malloc(sizeof(int)*numsSize);
 	
-	scanf("%d",arr+arrSize);
-    while(getchar()!='\n')
-    {
-    	arrSize++;
-    	scanf("%d",arr+arrSize);
-	}
+	for(int i=0;i<numsSize;i++)
+	scanf("%d",&nums[i]);
 	
-	duplicateZeros( arr,  arrSize+1);
+	duplicateZeros(nums,numsSize);
+	for(int i=0;i<numsSize;i++)
+	printf("%d ",nums[i]);
 	
-	for(int i=0;i<arrSize+1;i++)
-	printf("%d ",arr[i]);
-	
-	
+	free(nums);
 	return 0;
 }
