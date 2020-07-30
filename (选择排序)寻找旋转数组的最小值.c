@@ -1,3 +1,4 @@
+/*用选择排序对数组升序，第一个元素就是最小的数*/
 #include "stdio.h"
 #include "stdlib.h"
 
@@ -32,5 +33,5 @@ int main()
 	printf("%d",findMin(nums,numsSize));
 	
 	free(nums);
-	return 0;
+	return 0；
 }
