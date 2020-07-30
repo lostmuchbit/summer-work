@@ -9,8 +9,8 @@ int findMin(int* nums, int numsSize)
     	int temp;
     	index=i;
         for(j=i+1;j<numsSize-1;j++)
-        if(nums[j]>nums[j+1])
-		index=j+1;
+        if(nums[j]<nums[index])
+		index=j;
 		temp=nums[i];
 		nums[i]=nums[index];
 		nums[index]=temp;			
