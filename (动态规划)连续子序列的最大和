@@ -1,0 +1,41 @@
+/*转移方程： 若dp[i-1]≤0 ，说明 dp[i - 1]对 dp[i] 产生负贡献，即 dp[i-1] + nums[i]还不如 nums[i]本身大。
+
+当 dp[i-1]>0 时：执行 dp[i] = dp[i-1] + nums[i] ；
+当 dp[i-1]≤0 时：执行 dp[i] = nums[i] ；
+*/ 
+#include "stdio.h"
+#include "stdlib.h"
+#include "string.h"
+#include "math.h"
+
+int maxSubArray(int* nums, int numsSize)
+{
+    int maxSum;
+    int* dp=(int*)malloc(sizeof(int)*numsSize);
+    dp[0]=nums[0];
+    maxSum=dp[0];
+    for(int i=1;i<numsSize;i++)
+    {
+        dp[i]=fmax(dp[i-1]+nums[i],nums[i]);
+        maxSum=fmax(maxSum,dp[i]);
+    }
+    free(dp);
+    return maxSum;
+}
+
+int main()
+{
+	int ASize;
+	printf("输入数组元素个数：");
+	scanf("%d",&ASize);
+	
+	int* A=(int*)malloc(sizeof(int)*ASize);
+	printf("输入数组元素:");
+	for(int i=0;i<ASize;i++)
+	scanf("%d",&A[i]);
+	
+	printf("连续子序列最大和为%d",maxSubArray( A,ASize));
+	
+	free(A);
+	return 0;
+} 
