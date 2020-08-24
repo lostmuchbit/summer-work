@@ -29,7 +29,7 @@ void ShowList(Node *p,int n)
 	for(i = 0;i < n;i++)
 	{
 	    printf("%d ",t->val);
-		t = t->next;
+		t = t->next；
 	}
 }
 
